@@ -2,6 +2,6 @@
 
 namespace pjdietz\ShamServer\Exceptions;
 
-class BadHostException extends ShamServerException
+class CurlException extends ShamServerException
 {
 }

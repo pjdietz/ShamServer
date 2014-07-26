@@ -2,7 +2,7 @@
 
 namespace pjdietz\ShamServer;
 
-use pjdietz\ShamServer\Exceptions\BadHostException;
+use pjdietz\ShamServer\Exceptions\CurlException;
 use pjdietz\ShamServer\Exceptions\FileNotFoundException;
 use pjdietz\ShamServer\Exceptions\TimeoutException;
 
@@ -87,7 +87,7 @@ class ShamServer
      * Return true if able to make a cURL request to the server.
      *
      * @return bool
-     * @throws Exceptions\BadHostException
+     * @throws Exceptions\CurlException
      */
     public function isWebserverListening()
     {
@@ -96,8 +96,9 @@ class ShamServer
         $result = curl_exec($ch);
         if ($result === false) {
             $errno = curl_errno($ch);
+            $error = curl_error($ch);
             if ($errno !== 7) {
-                throw new BadHostException();
+                throw new CurlException($error, $errno);
             }
         }
         curl_close($ch);

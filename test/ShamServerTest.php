@@ -48,7 +48,7 @@ class ShamServerTest extends \PHPUnit_Framework_TestCase
         $host = "nonlocalhost";
         $port = 80;
         $script = realpath(__DIR__ . "/routers/router-200.php");
-        $this->setExpectedException('pjdietz\\ShamServer\\Exceptions\\BadHostException');
+        $this->setExpectedException('pjdietz\\ShamServer\\Exceptions\\CurlException');
         new ShamServer($host, $port, $script, 0);
     }
 
