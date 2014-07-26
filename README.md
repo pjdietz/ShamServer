@@ -1,5 +1,7 @@
 # ShamServer
 
+[![Build Status](https://travis-ci.org/pjdietz/ShamServer.svg?branch=master)](https://travis-ci.org/pjdietz/ShamServer)
+
 ShamServer allows you to build mini web servers for testing.
 
 It uses  [PHP's built in web server feature](http://php.net/manual/en/features.commandline.webserver.php) to spawn a separate process that listens for incoming requests and responds to them using the router script you provide.
