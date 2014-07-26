@@ -5,8 +5,6 @@ ShamServer allows you to build mini web servers for testing.
 It uses  [PHP's built in web server feature](http://php.net/manual/en/features.commandline.webserver.php) to spawn a separate process that listens for incoming requests and responds to them using the router script you provide.
 
 ```php
-<?php
-
 use pjdietz\ShamServer\ShamServer;
 
 $host = "localhost";
@@ -27,7 +25,6 @@ $server->stop();
 You can also use `StringShamServer` to create the router file for you. When you instantiate, pass a string containing the entirety of a PHP router script. The instance will write this to a temporary file, use it for the server, and them remove it.
 
 ```php
-<?php
 // Create a server that always responds with a 401 status code.
 $host = "localhost";
 $port = 8080;
