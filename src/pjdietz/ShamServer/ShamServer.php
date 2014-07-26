@@ -2,6 +2,7 @@
 
 namespace pjdietz\ShamServer;
 
+use pjdietz\ShamServer\Exceptions\BadHostException;
 use pjdietz\ShamServer\Exceptions\FileNotFoundException;
 use pjdietz\ShamServer\Exceptions\TimeoutException;
 
@@ -82,11 +83,23 @@ class ShamServer
         unset($this->pid);
     }
 
+    /**
+     * Return true if able to make a cURL request to the server.
+     *
+     * @return bool
+     * @throws Exceptions\BadHostException
+     */
     public function isWebserverListening()
     {
         $ch = curl_init();
         curl_setopt_array($ch, $this->options);
         $result = curl_exec($ch);
+        if ($result === false) {
+            $errno = curl_errno($ch);
+            if ($errno !== 7) {
+                throw new BadHostException();
+            }
+        }
         curl_close($ch);
         return $result !== false;
     }

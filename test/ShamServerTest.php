@@ -42,6 +42,16 @@ class ShamServerTest extends \PHPUnit_Framework_TestCase
         new ShamServer($host, $port, $script, 0);
     }
 
+    public function testStopOnBadHost()
+    {
+        // Start up a testing webserver.
+        $host = "nonlocalhost";
+        $port = 80;
+        $script = realpath(__DIR__ . "/routers/router-200.php");
+        $this->setExpectedException('pjdietz\\ShamServer\\Exceptions\\BadHostException');
+        new ShamServer($host, $port, $script, 0);
+    }
+
     public function testMissingRouterFile()
     {
         // Start up a testing webserver.
