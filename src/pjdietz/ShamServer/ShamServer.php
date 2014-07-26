@@ -36,6 +36,7 @@ class ShamServer
      * @param string $script Path to PHP router file
      * @param int $timeout Time in microseconds to wait for the webserver to start
      * @throws Exceptions\FileNotFoundException
+     * @throws Exceptions\TimeoutException
      */
     public function __construct($host, $port, $script, $timeout = 5000)
     {
@@ -122,6 +123,11 @@ class ShamServer
         return $this->script;
     }
 
+    /**
+     * Block while while the server is starting up.
+     *
+     * @throws Exceptions\TimeoutException
+     */
     private function wait()
     {
         $start = microtime();
