@@ -1,4 +1,17 @@
 {
+    "name": "pjdietz/shamserver",
+    "description": "Build mini web servers in PHP for testing",
+    "keywords": ["curl", "http", "webserver"],
+    "homepage": "https://github.com/pjdietz/ShamServer",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "PJ Dietz",
+            "email": "pj@pjdietz.com"
+        }
+    ],
+
     "require": {
         "php": ">=5.4.0",
         "lib-curl": "*"
