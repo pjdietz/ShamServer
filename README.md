@@ -16,7 +16,7 @@ $router = "/path/to/my/router.php";
 // Start up a testing web server.
 $server = new ShamServer($host, $port, $router);
 
-// A server is now at http://localhost:8080
+// A server is now listening at http://localhost:8080
 
 // Shut down the web server.
 $server->stop();
