@@ -32,10 +32,10 @@ class ShamServer
     /**
      * Create and start a new ShamServer
      *
-     * @param string $host Hostname to listen for
-     * @param int $port Port to list on
-     * @param string $script Path to PHP router file
-     * @param int $timeout Time in microseconds to wait for the webserver to start
+     * @param  string                           $host    Hostname to listen for
+     * @param  int                              $port    Port to list on
+     * @param  string                           $script  Path to PHP router file
+     * @param  int                              $timeout Time in microseconds to wait for the webserver to start
      * @throws Exceptions\FileNotFoundException
      * @throws Exceptions\TimeoutException
      */
@@ -102,6 +102,7 @@ class ShamServer
             }
         }
         curl_close($ch);
+
         return $result !== false;
     }
 
