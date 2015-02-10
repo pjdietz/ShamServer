@@ -39,6 +39,11 @@ $server = new StringShamServer($host, $port, $router);
 For more information on how to write router scripts, see the [PHP Manual](http://php.net/manual/en/features.commandline.webserver.php).
 
 
+## Install
+
+Add an entry for "pjdietz/shamserver" to your composer.json file's `require` or `require-dev` section.
+
+
 Copyright and License
 ---------------------
 Copyright © 2014 by PJ Dietz

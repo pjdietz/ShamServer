@@ -13,7 +13,6 @@ class StringShamServer extends ShamServer
      * @param int $port Port to list on
      * @param string $router PHP script as a string
      * @param int $timeout Time in microseconds to wait for the webserver to start
-     * @internal param string $script Path to PHP router file
      */
     public function __construct($host, $port, $router, $timeout = 5000)
     {
